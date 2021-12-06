@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { Box, Container } from '@chakra-ui/react';
+import Navigation from '../components/Navigation';
 
 const MainLayout: React.FC = ({ children }) => {
   return (
@@ -14,6 +15,8 @@ const MainLayout: React.FC = ({ children }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Navigation />
 
       <Container maxW="container.md" pt={14}>
         {children}

@@ -12,12 +12,16 @@ const LogoStyle = styled.span`
   line-height: 20px;
   padding: 10px;
 
+  img {
+    transition: 0.2s ease;
+  }
+
   &:hover img {
     transform: rotate(20deg);
   }
 `;
 
-const logoImg = `../public/images/testIcon.png`;
+const logoImg = `/images/testIcon.png`;
 
 const Logo = () => {
   return (
@@ -25,15 +29,15 @@ const Logo = () => {
       <a>
         <LogoStyle>
           <Image src={logoImg} width={20} height={20} alt="Logo blog" />
+          <Text
+            color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+            fontFamily="M PLUS Rounded 1c"
+            fontWeight="bold"
+            ml={3}
+          >
+            Blog???
+          </Text>
         </LogoStyle>
-        <Text
-          color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-          fontFamily="M PLUS Rounded 1c"
-          fontWeight="bold"
-          ml={3}
-        >
-          Blog ???
-        </Text>
       </a>
     </Link>
   );

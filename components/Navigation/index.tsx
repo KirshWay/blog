@@ -19,14 +19,14 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 
 type LinkItemProps = {
   href: string;
-  path: string;
-  _target: string;
+  path?: any;
+  target?: string;
 };
 
 const LinkItem: React.FC<LinkItemProps> = ({
   href,
   path,
-  _target,
+  target,
   children,
   ...props
 }) => {
@@ -38,7 +38,7 @@ const LinkItem: React.FC<LinkItemProps> = ({
         p={2}
         bg={active ? 'grassTeal' : undefined}
         color={active ? '#202023' : inactiveColor}
-        _target={_target}
+        target={target}
         {...props}
       >
         {children}
@@ -47,6 +47,51 @@ const LinkItem: React.FC<LinkItemProps> = ({
   );
 };
 
-const Navigation = () => {};
+const Navigation: React.FC = ({ ...props }) => {
+  const path = { props };
+
+  return (
+    <Box
+      position="fixed"
+      as="nav"
+      w="100%"
+      bg={useColorModeValue('#ffffff40', '#20202380')}
+      css={{ backdropFilter: 'blur(10px)' }}
+      zIndex={1}
+      {...props}
+    >
+      <Container
+        display="flex"
+        p={2}
+        maxW="container.md"
+        wrap="wrap"
+        align="center"
+        justify="space-between"
+      >
+        <Flex align="center" mr={5}>
+          <Heading as="h1" size="lg" letterSpacing={'tighter'}>
+            <Logo />
+          </Heading>
+        </Flex>
+
+        <Stack
+          direction={{ base: 'column', md: 'row' }}
+          display={{ base: 'none', md: 'flex' }}
+          width={{ base: 'full', md: 'auto' }}
+          alignItems="center"
+          flexGrow={1}
+          mt={{ base: 4, nmd: 0 }}
+        >
+          <LinkItem href="/posts" path={path}>
+            Posts
+          </LinkItem>
+          <LinkItem href="https://github.com/KirshFein" target="_blank">
+            Github
+          </LinkItem>
+        </Stack>
+      </Container>
+    </Box>
+  );
+};
 
 export default Navigation;
