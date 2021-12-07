@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Global } from '@emotion/react';
 
 export const CustomizeFont = () => (
   <style jsx global>{`
@@ -10,3 +11,13 @@ export const Paragraph = styled.p`
   text-align: justify;
   text-indent: 1em;
 `;
+
+export const GridItemStyle = () => (
+  <Global
+    styles={`
+      .grid-item-thumbnail {
+        border-radius: 12px;
+      }
+    `}
+  />
+);

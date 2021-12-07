@@ -1,12 +1,14 @@
 import type { NextPage } from 'next';
-import { Container, Heading, SimpleGrid } from '@chakra-ui/react';
-import AnimationShow from '../components/AnimationShow';
+import { Container, Heading } from '@chakra-ui/react';
+import AnimationLayout from '../layouts/AnimationLayout';
 
 const Posts: NextPage = () => {
   return (
-    <Container>
-      <Heading as="h3">Posts</Heading>
-    </Container>
+    <AnimationLayout>
+      <Container>
+        <Heading as="h3">Posts</Heading>
+      </Container>
+    </AnimationLayout>
   );
 };
 
