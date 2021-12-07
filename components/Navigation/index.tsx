@@ -90,7 +90,7 @@ const Navigation: React.FC = ({ ...props }) => {
 
         <Box flex={1} align="right">
           <ThemeToggler />
-          <Box ml={2} display={{ base: 'inline-flex', md: 'none' }}>
+          <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu>
               <MenuButton
                 as={IconButton}

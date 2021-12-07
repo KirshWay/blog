@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
 import MainLayout from '../layouts/MainLayout';
 import theme from '../assets/scripts/theme';
-import { CustomizeFont } from '../assets/scripts/font';
+import { CustomizeFont } from '../assets/scripts/stylesCustomize';
 
 const App = ({ Component, pageProps, router }: AppProps) => {
   return (
