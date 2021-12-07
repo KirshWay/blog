@@ -13,7 +13,7 @@ const NotFound: NextPage = () => {
   return (
     <Container>
       <Heading as="h1">Not Found</Heading>
-      <Text>The page don't found, go back to home page</Text>
+      <Text>The page dont found, go back to home page</Text>
       <Divider my={6} />
       <Box my={6} align="center">
         <NextLink href="/">
