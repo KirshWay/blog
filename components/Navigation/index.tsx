@@ -16,6 +16,7 @@ import {
   useColorModeValue
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
+import ThemeToggler from '../ThemeToggler';
 
 type LinkItemProps = {
   href: string;
@@ -85,10 +86,29 @@ const Navigation: React.FC = ({ ...props }) => {
           <LinkItem href="/posts" path={path}>
             Posts
           </LinkItem>
-          <LinkItem href="https://github.com/KirshFein" target="_blank">
-            Github
-          </LinkItem>
         </Stack>
+
+        <Box flex={1} align="right">
+          <ThemeToggler />
+          <Box ml={2} display={{ base: 'inline-flex', md: 'none' }}>
+            <Menu>
+              <MenuButton
+                as={IconButton}
+                icon={<HamburgerIcon />}
+                varinat="outline"
+                aria-label="Options"
+              />
+              <MenuList>
+                <NextLink href="/" passHref>
+                  <MenuItem as={Link}>About</MenuItem>
+                </NextLink>
+                <NextLink href="/posts" passHref>
+                  <MenuItem as={Link}>Posts</MenuItem>
+                </NextLink>
+              </MenuList>
+            </Menu>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );

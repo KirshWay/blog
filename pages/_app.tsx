@@ -1,13 +1,11 @@
 import type { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
-import { ColorModeScript } from '@chakra-ui/react';
-import theme from '../assets/scripts/theme';
 import MainLayout from '../layouts/MainLayout';
+import theme from '../assets/scripts/theme';
 
 const App = ({ Component, pageProps, router }: AppProps) => {
   return (
-    <ChakraProvider>
-      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+    <ChakraProvider theme={theme}>
       <MainLayout>
         <Component {...pageProps} key={router.route} />
       </MainLayout>
