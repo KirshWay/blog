@@ -6,7 +6,21 @@ import { Loader } from '../components/PlacholderTop';
 
 const MainLayout: React.FC = ({ children }) => {
   return (
-    <Box as="main">
+    <Box
+      as="main"
+      overflowY="auto"
+      css={{
+        '&::-webkit-scrollbar': {
+          width: '4px'
+        },
+        '&::-webkit-scrollbar-track': {
+          width: '6px'
+        },
+        '&::-webkit-scrollbar-thumb': {
+          borderRadius: '24px'
+        }
+      }}
+    >
       <Head>
         <title>Blog ???</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
