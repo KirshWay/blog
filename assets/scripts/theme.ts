@@ -5,7 +5,7 @@ import { Dict } from '@chakra-ui/utils';
 const styles = {
   global: (props: Dict<any> | StyleFunctionProps) => ({
     body: {
-      bg: mode('#f0e7db', '#202023')(props)
+      bg: mode('#e0d4c6', '#25252c')(props)
     }
   })
 };
@@ -26,8 +26,8 @@ const components = {
   },
   Link: {
     baseStyle: (props: Dict<any> | StyleFunctionProps) => ({
-      color: mode('#3d7aed', '#ff63c3')(props),
-      textUnderlineOffset: 3
+      color: mode('#c02365', '#7043ab')(props),
+      textUnderlineOffset: 2
     })
   }
 };
@@ -37,7 +37,7 @@ const fonts = {
 };
 
 const colors = {
-  grassTeal: '#88ccca'
+  grassPurple: '#582e86'
 };
 
 const config: ThemeConfig = {
