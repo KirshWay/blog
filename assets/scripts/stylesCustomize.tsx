@@ -15,7 +15,7 @@ export const Paragraph = styled.p`
 export const GridItemStyle = () => (
   <Global
     styles={`
-      .grid-item-thumbnail {
+      .grid-item-img {
         border-radius: 12px;
       }
     `}

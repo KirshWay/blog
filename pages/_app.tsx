@@ -4,6 +4,7 @@ import MainLayout from '../layouts/MainLayout';
 import theme from '../assets/scripts/theme';
 import { CustomizeFont } from '../assets/scripts/stylesCustomize';
 import { AnimatePresence } from 'framer-motion';
+import { CustomizeScroll } from '../assets/scripts/stylesCustomize';
 
 const App = ({ Component, pageProps, router }: AppProps) => {
   return (
@@ -11,7 +12,9 @@ const App = ({ Component, pageProps, router }: AppProps) => {
       <CustomizeFont />
       <MainLayout>
         <AnimatePresence exitBeforeEnter initial={true}>
-          <Component {...pageProps} key={router.route} />
+          <CustomizeScroll>
+            <Component {...pageProps} key={router.route} />
+          </CustomizeScroll>
         </AnimatePresence>
       </MainLayout>
     </ChakraProvider>
