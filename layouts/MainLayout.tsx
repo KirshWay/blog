@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { Box, Container } from '@chakra-ui/react';
 import Navigation from '../components/Navigation';
+import { Loader } from '../components/PlacholderTop';
 
 const MainLayout: React.FC = ({ children }) => {
   return (
@@ -19,6 +20,8 @@ const MainLayout: React.FC = ({ children }) => {
       <Navigation />
 
       <Container maxW="container.md" pt={14}>
+        <Loader />
+
         {children}
       </Container>
     </Box>

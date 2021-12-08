@@ -24,7 +24,7 @@ const Main: NextPage = () => {
       <Container>
         <Box
           borderRadius="lg"
-          bg={useColorModeValue('whiteAlpha.700', 'whiteAlpha.100')}
+          bg={useColorModeValue('purple.300', 'purple.900')}
           p={3}
           mb={6}
           align="center"
@@ -37,7 +37,7 @@ const Main: NextPage = () => {
             <Heading as="h2" variant="page-title">
               Victor Nemec
             </Heading>
-            <p>I like programming, reading books, and everything beautiful👽</p>
+            <p>Я люблю программировать, читать книги и все красивое👽</p>
           </Box>
           <Box
             align="center"
@@ -46,7 +46,7 @@ const Main: NextPage = () => {
             ml={{ md: 6 }}
           >
             <Image
-              src="/images/testIconAvatar.jpg"
+              src="/images/temporaryAvatar.jpg"
               display="inline-block"
               borderRadius="full"
               borderColor="whiteAlpha.800"
@@ -72,8 +72,8 @@ const Main: NextPage = () => {
           </Paragraph>
           <Box align="center" my={4}>
             <NextLink href="/posts">
-              <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-                Posts
+              <Button rightIcon={<ChevronRightIcon />} colorScheme="purple">
+                Посты
               </Button>
             </NextLink>
           </Box>
@@ -89,20 +89,20 @@ const Main: NextPage = () => {
                 <Button
                   leftIcon={<Icon as={BsGithub} />}
                   variant="ghost"
-                  colorScheme="teal"
+                  colorScheme="green"
                 >
                   @KIRSH???
                 </Button>
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="https://github.com/KirshFein" target="_blank">
+              <Link href="https://t.me/HidanBla" target="_blank">
                 <Button
-                  leftIcon={<Icon as={BsGithub} />}
+                  leftIcon={<Icon as={BsTelegram} />}
                   variant="ghost"
-                  colorScheme="teal"
+                  colorScheme="green"
                 >
-                  @KIRSH???
+                  @HIDANBLA
                 </Button>
               </Link>
             </ListItem>
