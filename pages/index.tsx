@@ -17,6 +17,7 @@ import { Paragraph } from '../assets/scripts/stylesCustomize';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import AnimationLayout from '../layouts/AnimationLayout';
 import { BsTelegram, BsGithub } from 'react-icons/bs';
+import { CustomizeScroll } from '../assets/scripts/stylesCustomize';
 
 const Main: NextPage = () => {
   return (

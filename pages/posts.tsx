@@ -1,8 +1,11 @@
 import type { NextPage } from 'next';
+import { Container, Heading, SimpleGrid } from '@chakra-ui/react';
 import Link from 'next/link';
 import { getSortedPostsData } from '../lib/posts';
 import { Container, Heading } from '@chakra-ui/react';
 import AnimationLayout from '../layouts/AnimationLayout';
+import GridItem from '../components/ui/GridItem';
+import AnimationShow from '../components/AnimationShow';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -19,6 +22,9 @@ const Posts: NextPage = ({ allPostsData }) => {
     <AnimationLayout>
       <Container>
         <Heading as="h3">Posts</Heading>
+        <AnimationShow delay={0.3}>
+          <SimpleGrid columns={[1, 2, 2]} gap={6}></SimpleGrid>
+        </AnimationShow>
         <ul>
           {/*@ts-ignore*/}
           {allPostsData.map(({ id, title, date }) => (
