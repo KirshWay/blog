@@ -84,7 +84,7 @@ const Navigation: React.FC = ({ ...props }) => {
           mt={{ base: 4, nmd: 0 }}
         >
           <LinkItem href="/posts" path={path}>
-            Posts
+            Посты
           </LinkItem>
         </Stack>
 
@@ -100,7 +100,7 @@ const Navigation: React.FC = ({ ...props }) => {
               />
               <MenuList>
                 <NextLink href="/posts" passHref>
-                  <MenuItem as={Link}>Posts</MenuItem>
+                  <MenuItem as={Link}>Посты</MenuItem>
                 </NextLink>
               </MenuList>
             </Menu>

@@ -1,6 +1,7 @@
 ---
 title: 'Test2'
 date: '8 декабря'
+cover_img: 'images/postsAssets/images/lifePoint.jpg'
 ---
 
 TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST
