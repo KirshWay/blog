@@ -1,10 +1,6 @@
 ---
-title: 'Test'
-date: '8 декабря'
-cover_img: 'images/postsAssets/images/lifePoint.jpg'
+title: Hello1
+slug: test1
+cover_img: 'postsAssets/images/lifePoint.jpg'
 ---
-
-## Heading 2
-
-- Item 1
-- Item 2
+<h1>Hello world! Post 1</h1>

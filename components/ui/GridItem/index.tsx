@@ -17,12 +17,12 @@ const GridItem: React.FC<GridItemProps> = ({
   imgSource
 }) => (
   <Box w="100%" textAlign="center">
-    <NextLink href={hrefSource}>
+    <NextLink href={`/posts/${hrefSource}`}>
       <LinkBox cursor="pointer">
         <Image
           width={1200}
           height={820}
-          src={imgSource}
+          src={`/${imgSource}`}
           alt={title}
           className="grid-item-img"
         />

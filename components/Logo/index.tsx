@@ -21,7 +21,7 @@ const LogoStyle = styled.span`
   }
 `;
 
-const logoImg = `/images/testIcon.png`;
+const logoImg = `/testIcon.png`;
 
 const Logo = () => {
   return (

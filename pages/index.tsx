@@ -48,7 +48,7 @@ const Main: NextPage = () => {
               ml={{ md: 6 }}
             >
               <Image
-                src="/images/temporaryAvatar.jpg"
+                src="/temporaryAvatar.jpg"
                 display="inline-block"
                 borderRadius="full"
                 borderColor="whiteAlpha.800"

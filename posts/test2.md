@@ -1,9 +1,6 @@
 ---
-title: 'Test2'
-date: '8 декабря'
-cover_img: 'images/postsAssets/images/lifePoint.jpg'
+title: Hello2
+slug: test1
+cover_img: 'postsAssets/images/lifePoint.jpg'
 ---
-
-TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST
-TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST
-TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTa
+<h1>Hello world! Post 2</h1>
