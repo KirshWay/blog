@@ -8,7 +8,7 @@ const MainLayout: React.FC = ({ children }) => {
   return (
     <Box as="main">
       <Head>
-        <title>Blog ???</title>
+        <title>KW blog</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
