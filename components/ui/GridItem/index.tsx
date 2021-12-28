@@ -4,9 +4,9 @@ import Image from 'next/image';
 import { Box, Text, LinkBox } from '@chakra-ui/react';
 
 type GridItemProps = {
+  title?: string;
   description?: string;
   hrefSource: string;
-  title?: string;
   imgSource: string;
 };
 

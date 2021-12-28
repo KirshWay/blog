@@ -1,6 +1,4 @@
 import type { NextPage } from 'next';
-import fs from 'fs';
-import path from 'path';
 import matter from 'gray-matter';
 import { Container, Heading, SimpleGrid } from '@chakra-ui/react';
 import Link from 'next/link';
@@ -9,19 +7,10 @@ import GridItem from '../components/ui/GridItem';
 import AnimationShow from '../components/AnimationShow';
 import { CustomizeScroll } from '../assets/scripts/stylesCustomize';
 
-type PostPreviewTypes = {
-  frontMatter: {
-    cover_img: string;
-    date: string;
-    title: string;
-  };
-  slug: string;
-};
-
-const Posts: NextPage<PostPreviewTypes> = props => {
+const Posts: NextPage = props => {
   // @ts-ignore
-  const { posts } = props;
-
+  const realData = props.data.map(blog => matter(blog));
+  const listItems = realData.map((listItem: any) => listItem.data);
   return (
     <CustomizeScroll>
       <AnimationLayout>
@@ -29,12 +18,13 @@ const Posts: NextPage<PostPreviewTypes> = props => {
           <Heading as="h3">Posts</Heading>
           <AnimationShow delay={0.3}>
             <SimpleGrid columns={[1, 2, 2]} gap={6}>
-              {posts.map((post: PostPreviewTypes, id: number) => (
+              {listItems.map((post: any, index: number) => (
                 <GridItem
-                  key={id}
-                  title={post.frontMatter.title}
-                  imgSource={post.frontMatter.cover_img}
+                  key={index}
+                  title={post.title}
+                  description={post.description}
                   hrefSource={post.slug}
+                  imgSource={post.cover_img}
                 />
               ))}
             </SimpleGrid>
@@ -46,21 +36,24 @@ const Posts: NextPage<PostPreviewTypes> = props => {
 };
 
 export const getStaticProps = async () => {
-  const files = fs.readdirSync(path.join('posts'));
-  const posts = files.map(filename => {
-    const markdownWithMeta = fs.readFileSync(
-      path.join('posts', filename),
-      'utf-8'
-    );
-    const { data: frontMatter } = matter(markdownWithMeta);
-    return {
-      frontMatter,
-      slug: filename.split('.')[0]
-    };
+  const fs = require('fs');
+
+  const files = fs.readdirSync(`${process.cwd()}/content`, 'utf-8');
+
+  const blogs = files.filter((fn: any) => fn.endsWith('.md'));
+
+  const data = blogs.map((blog: any) => {
+    const path = `${process.cwd()}/content/${blog}`;
+    const rawContent = fs.readFileSync(path, {
+      encoding: 'utf-8'
+    });
+
+    return rawContent;
   });
+
   return {
     props: {
-      posts
+      data
     }
   };
 };
