@@ -8,7 +8,7 @@ const LogoStyle = styled.span`
   font-size: 18px;
   display: inline-flex;
   align-items: center;
-  height: 30px;
+  height: 45px;
   line-height: 20px;
   padding: 10px;
 
@@ -21,21 +21,21 @@ const LogoStyle = styled.span`
   }
 `;
 
-const logoImg = `/testIcon.png`;
+const logoImg = `/main-icon.png`;
 
 const Logo = () => {
   return (
     <Link href="/">
       <a>
         <LogoStyle>
-          <Image src={logoImg} width={20} height={20} alt="Logo blog" />
+          <Image src={logoImg} width={32} height={32} alt="Logo blog" />
           <Text
             color={useColorModeValue('gray.800', 'whiteAlpha.900')}
             fontFamily="M PLUS Rounded 1c"
             fontWeight="bold"
             ml={3}
           >
-            Blog???
+            KirshWay blog
           </Text>
         </LogoStyle>
       </a>

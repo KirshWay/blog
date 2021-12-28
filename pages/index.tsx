@@ -87,24 +87,24 @@ const Main: NextPage = () => {
             </Heading>
             <List>
               <ListItem>
-                <Link href="https://github.com/KirshFein" target="_blank">
+                <Link href="https://github.com/KirshWay" target="_blank">
                   <Button
                     leftIcon={<Icon as={BsGithub} />}
                     variant="ghost"
                     colorScheme="green"
                   >
-                    @KIRSH???
+                    @KIRSHWAY
                   </Button>
                 </Link>
               </ListItem>
               <ListItem>
-                <Link href="https://t.me/HidanBla" target="_blank">
+                <Link href="https://t.me/KirshWay" target="_blank">
                   <Button
                     leftIcon={<Icon as={BsTelegram} />}
                     variant="ghost"
                     colorScheme="green"
                   >
-                    @HIDANBLA
+                    @KIRSHWAY
                   </Button>
                 </Link>
               </ListItem>
