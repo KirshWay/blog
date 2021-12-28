@@ -1,10 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { Box, Container } from '@chakra-ui/react';
 import Navigation from '../components/Navigation';
 import { Loader } from '../components/PlacholderTop';
 
 const MainLayout: React.FC = ({ children }) => {
+  const route = useRouter();
+  console.log(route);
+
   return (
     <Box as="main">
       <Head>
@@ -20,8 +24,7 @@ const MainLayout: React.FC = ({ children }) => {
       <Navigation />
 
       <Container maxW="container.md" pt={14}>
-        <Loader />
-
+        {route.pathname !== '/posts/[blog]' && <Loader />}
         {children}
       </Container>
     </Box>
