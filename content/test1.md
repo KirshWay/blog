@@ -5,7 +5,7 @@ description: "Тест"
 cover_img: 'postsAssets/images/lifePoint.jpg'
 date: '29 Января'
 ---
-# Title
 
-* List
-* [ ] Todo
+# Test
+
+![](/postsAssets/images/lifePoint.jpg)

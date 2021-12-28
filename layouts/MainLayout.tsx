@@ -7,7 +7,6 @@ import { Loader } from '../components/PlacholderTop';
 
 const MainLayout: React.FC = ({ children }) => {
   const route = useRouter();
-  console.log(route);
 
   return (
     <Box as="main">

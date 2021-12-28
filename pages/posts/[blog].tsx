@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { Box } from '@chakra-ui/react';
+import { MarkdownStyles } from '../../assets/scripts/stylesCustomize';
 
 // @ts-ignore
 const BlogPost = props => {
@@ -11,7 +12,9 @@ const BlogPost = props => {
   return (
     <Box p={5}>
       <div>
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+        <MarkdownStyles>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+        </MarkdownStyles>
       </div>
     </Box>
   );
