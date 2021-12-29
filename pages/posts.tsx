@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
 import matter from 'gray-matter';
 import { Container, Heading, SimpleGrid } from '@chakra-ui/react';
-import Link from 'next/link';
 import AnimationLayout from '../layouts/AnimationLayout';
 import GridItem from '../components/ui/GridItem';
 import AnimationShow from '../components/AnimationShow';
@@ -11,16 +10,20 @@ const Posts: NextPage = props => {
   // @ts-ignore
   const realData = props.data.map(blog => matter(blog));
   const listItems = realData.map((listItem: any) => listItem.data);
+
   return (
     <CustomizeScroll>
       <AnimationLayout>
         <Container>
-          <Heading as="h3">Posts</Heading>
+          <Heading as="h3" mb={5}>
+            Posts
+          </Heading>
           <AnimationShow delay={0.3}>
             <SimpleGrid columns={[1, 2, 2]} gap={6}>
               {listItems.map((post: any, index: number) => (
                 <GridItem
                   key={index}
+                  date={post.date}
                   title={post.title}
                   description={post.description}
                   hrefSource={post.slug}

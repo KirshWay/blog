@@ -24,7 +24,7 @@ const device = {
 
 export const CustomizeFont = () => (
   <style jsx global>{`
-    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
   `}</style>
 );
 
@@ -62,6 +62,18 @@ export const CustomizeScroll = styled.body`
 
 export const MarkdownStyles = styled.div`
   & > h1 {
-    font-size: 30px;
+    font-size: 2.5rem;
+
+    @media ${device.laptopL} {
+      font-size: 3rem;
+    }
+  }
+
+  & > p {
+    font-size: 1rem;
+
+    @media ${device.laptopL} {
+      font-size: 1.2rem;
+    }
   }
 `;

@@ -33,7 +33,7 @@ const components = {
 };
 
 const fonts = {
-  heading: "'Lato'"
+  heading: "'Noto Sans'"
 };
 
 const colors = {

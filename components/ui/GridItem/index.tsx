@@ -1,16 +1,18 @@
 import React from 'react';
 import NextLink from 'next/link';
 import Image from 'next/image';
-import { Box, Text, LinkBox } from '@chakra-ui/react';
+import { Box, Text, LinkBox, Stack, Badge } from '@chakra-ui/react';
 
 type GridItemProps = {
-  title?: string;
-  description?: string;
+  date: string;
+  title: string;
+  description: string;
   hrefSource: string;
   imgSource: string;
 };
 
 const GridItem: React.FC<GridItemProps> = ({
+  date,
   description,
   title,
   hrefSource,
@@ -26,6 +28,9 @@ const GridItem: React.FC<GridItemProps> = ({
           alt={title}
           className="grid-item-img"
         />
+        <Stack direction="row">
+          <Badge colorScheme="purple">{date}</Badge>
+        </Stack>
         <Text mt={2} fontSize={20}>
           {title}
         </Text>
