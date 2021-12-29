@@ -48,7 +48,7 @@ const Main: NextPage = () => {
               ml={{ md: 6 }}
             >
               <Image
-                src="/temporaryAvatar.jpg"
+                src="/avatar.jpg"
                 display="inline-block"
                 borderRadius="full"
                 borderColor="whiteAlpha.800"
@@ -62,15 +62,15 @@ const Main: NextPage = () => {
 
           <AnimationShow delay={0.1}>
             <Heading as="h3" variant="section-title">
-              Hello
+              Кратко о чём блог
             </Heading>
             <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
-              aut consequuntur distinctio dolorem dolorum est facere neque
-              praesentium quis velit! A aspernatur ex magnam quisquam
-              repellendus. A, consequatur culpa cum dicta dolorum earum eos esse
-              est excepturi, fugit maiores non nulla obcaecati optio placeat,
-              quasi quis rem sapiente veritatis voluptatem!
+              В этом блоге я буду писать различные свои взгляды на интересные
+              мне темы, это могут быть и книги, фильмы, сериалы, игры. Хочется
+              также писать о каких свои мыслях об устройстве мира, и том что я
+              какие приоритеты ставлю в различных аспектах жизни, и мысли
+              конечно могут быть странные, но такой уж я. В будущем думаю писать
+              также про путешествия.
             </Paragraph>
             <Box align="center" my={4}>
               <NextLink href="/posts">
@@ -83,7 +83,7 @@ const Main: NextPage = () => {
 
           <AnimationShow delay={0.35}>
             <Heading as="h3" variant="section-title">
-              Socials:
+              Связаться:
             </Heading>
             <List>
               <ListItem>
@@ -108,6 +108,17 @@ const Main: NextPage = () => {
                   </Button>
                 </Link>
               </ListItem>
+              {/*<ListItem>*/}
+              {/*  <Link href="#">*/}
+              {/*    <Button*/}
+              {/*      leftIcon={<Icon as={BsTelegram} />}*/}
+              {/*      variant="ghost"*/}
+              {/*      colorScheme="green"*/}
+              {/*    >*/}
+              {/*      @BLOG IN TG FUTURE???*/}
+              {/*    </Button>*/}
+              {/*  </Link>*/}
+              {/*</ListItem>*/}
             </List>
           </AnimationShow>
         </Container>
