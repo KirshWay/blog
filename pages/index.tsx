@@ -16,7 +16,7 @@ import AnimationShow from '../components/AnimationShow';
 import { Paragraph } from '../assets/scripts/stylesCustomize';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import AnimationLayout from '../layouts/AnimationLayout';
-import { BsTelegram, BsGithub } from 'react-icons/bs';
+import { BsTelegram, BsGithub, BsTwitter } from 'react-icons/bs';
 import { CustomizeScroll } from '../assets/scripts/stylesCustomize';
 
 const Main: NextPage = () => {
@@ -108,17 +108,17 @@ const Main: NextPage = () => {
                   </Button>
                 </Link>
               </ListItem>
-              {/*<ListItem>*/}
-              {/*  <Link href="#">*/}
-              {/*    <Button*/}
-              {/*      leftIcon={<Icon as={BsTelegram} />}*/}
-              {/*      variant="ghost"*/}
-              {/*      colorScheme="green"*/}
-              {/*    >*/}
-              {/*      @BLOG IN TG FUTURE???*/}
-              {/*    </Button>*/}
-              {/*  </Link>*/}
-              {/*</ListItem>*/}
+              <ListItem>
+                <Link href="https://twitter.com/KirshWay" target="_blank">
+                  <Button
+                    leftIcon={<Icon as={BsTwitter} />}
+                    variant="ghost"
+                    colorScheme="green"
+                  >
+                    @KIRSHWAY
+                  </Button>
+                </Link>
+              </ListItem>
             </List>
           </AnimationShow>
         </Container>
