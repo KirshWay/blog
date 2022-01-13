@@ -24,6 +24,7 @@ const Posts: NextPage = props => {
                 <GridItem
                   key={index}
                   date={post.date}
+                  tag={post.tag}
                   title={post.title}
                   description={post.description}
                   hrefSource={post.slug}
