@@ -18,6 +18,7 @@ const MainLayout: React.FC = ({ children }) => {
           content="This is a blog about everything that interests me"
         />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
 
       <Navigation />
