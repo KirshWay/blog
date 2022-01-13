@@ -37,7 +37,7 @@ const Main: NextPage = () => {
           <Box display={{ md: 'flex' }}>
             <Box flexGrow={1}>
               <Heading as="h2" variant="page-title">
-                Victor Nemec
+                Виктор Немец
               </Heading>
               <p>Я люблю программировать, читать книги и все красивое👽</p>
             </Box>
