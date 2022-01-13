@@ -71,6 +71,7 @@ export const MarkdownStyles = styled.div`
 
   & > p {
     font-size: 1rem;
+    line-height: 2rem;
 
     @media ${device.laptopL} {
       font-size: 1.2rem;
