@@ -1,10 +1,21 @@
 import type { NextPage } from 'next';
 import matter from 'gray-matter';
-import { Container, Heading, SimpleGrid } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Container,
+  Heading,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  SimpleGrid
+} from '@chakra-ui/react';
 import AnimationLayout from '../layouts/AnimationLayout';
 import GridItem from '../components/ui/GridItem';
 import AnimationShow from '../components/AnimationShow';
 import { CustomizeScroll } from '../assets/scripts/stylesCustomize';
+import { ChevronDownIcon } from '@chakra-ui/icons';
 
 const Posts: NextPage = props => {
   // @ts-ignore
@@ -15,9 +26,21 @@ const Posts: NextPage = props => {
     <CustomizeScroll>
       <AnimationLayout>
         <Container>
-          <Heading as="h3" mb={5}>
-            Posts
-          </Heading>
+          <Box display="flex" justifyContent="space-between">
+            <Heading as="h3" mb={5}>
+              Posts
+            </Heading>
+            <Menu>
+              <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                Выберите тег
+              </MenuButton>
+              <MenuList>
+                {listItems.map((post: any, index: number) => (
+                  <MenuItem key={index}>{post.tag}</MenuItem>
+                ))}
+              </MenuList>
+            </Menu>
+          </Box>
           <AnimationShow delay={0.3}>
             <SimpleGrid columns={[1, 2, 2]} gap={6}>
               {listItems.map((post: any, index: number) => (
