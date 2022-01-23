@@ -1,11 +1,16 @@
+import React from 'react';
+import { GetServerSideProps } from 'next';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Box } from '@chakra-ui/react';
 import { MarkdownStyles } from '../../assets/scripts/stylesCustomize';
 
-// @ts-ignore
-const BlogPost = props => {
+type BlogPostType = {
+  content: string;
+};
+
+const BlogPost: React.FC<BlogPostType> = props => {
   const { content } = matter(props.content);
 
   return (
@@ -17,13 +22,15 @@ const BlogPost = props => {
   );
 };
 
-// @ts-ignore
-export const getServerSideProps = async context => {
+type getServerSidePropsType = {
+  blog: string;
+};
+
+export const getServerSideProps: GetServerSideProps = async context => {
   const fs = require('fs');
+  const { blog }: any = context.params;
 
-  const { blog } = context.params;
-
-  const content = await fs.readFileSync(
+  const content = fs.readFileSync(
     `${process.cwd()}/content/${blog}.md`,
     'utf8'
   );

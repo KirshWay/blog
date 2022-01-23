@@ -20,7 +20,7 @@ import ThemeToggler from '../ThemeToggler';
 
 type LinkItemProps = {
   href: string;
-  path?: any;
+  path: string;
   target?: string;
 };
 

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import matter from 'gray-matter';
 import {
   Box,
@@ -17,10 +17,13 @@ import AnimationShow from '../components/AnimationShow';
 import { CustomizeScroll } from '../assets/scripts/stylesCustomize';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 
-const Posts: NextPage = props => {
-  // @ts-ignore
-  const realData = props.data.map(blog => matter(blog));
-  const listItems = realData.map((listItem: any) => listItem.data);
+type DataPostType = {
+  data: [string];
+};
+
+const Posts: NextPage<DataPostType> = ({ data }) => {
+  const realData = data.map(blog => matter(blog));
+  const listItems = realData.map(listItem => listItem.data);
 
   return (
     <CustomizeScroll>
@@ -35,7 +38,7 @@ const Posts: NextPage = props => {
                 Выберите тег
               </MenuButton>
               <MenuList>
-                {listItems.map((post: any, index: number) => (
+                {listItems.map((post, index) => (
                   <MenuItem key={index}>{post.tag}</MenuItem>
                 ))}
               </MenuList>
@@ -43,7 +46,7 @@ const Posts: NextPage = props => {
           </Box>
           <AnimationShow delay={0.3}>
             <SimpleGrid columns={[1, 2, 2]} gap={6}>
-              {listItems.map((post: any, index: number) => (
+              {listItems.map((post, index) => (
                 <GridItem
                   key={index}
                   date={post.date}
@@ -62,19 +65,18 @@ const Posts: NextPage = props => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const fs = require('fs');
 
   const files = fs.readdirSync(`${process.cwd()}/content`, 'utf-8');
 
-  const blogs = files.filter((fn: any) => fn.endsWith('.md'));
+  const blogs = files.filter((fn: string) => fn.endsWith('.md'));
 
-  const data = blogs.map((blog: any) => {
+  const data = blogs.map((blog: string) => {
     const path = `${process.cwd()}/content/${blog}`;
     const rawContent = fs.readFileSync(path, {
       encoding: 'utf-8'
     });
-
     return rawContent;
   });
 

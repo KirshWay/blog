@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Box, Spinner } from '@chakra-ui/react';
 
-const placeholderImg = `/modelTest.jpg`;
+const placeholderImg = `/mountain.jpg`;
 
 const SpinnerContainer = () => (
   <Spinner
