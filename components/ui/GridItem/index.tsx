@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { Box, Text, LinkBox, Stack, Badge } from '@chakra-ui/react';
 
 type GridItemProps = {
-  date: string;
   tag: string;
   title: string;
   description: string;
@@ -13,7 +12,6 @@ type GridItemProps = {
 };
 
 const GridItem: React.FC<GridItemProps> = ({
-  date,
   tag,
   description,
   title,
@@ -31,14 +29,11 @@ const GridItem: React.FC<GridItemProps> = ({
           className="grid-item-img"
         />
         <Box display="flex">
-          <Stack mr="2" direction="row">
-            <Badge colorScheme="purple">{date}</Badge>
-          </Stack>
           <Stack direction="row">
             <Badge colorScheme="green">{tag}</Badge>
           </Stack>
         </Box>
-        <Text mt={2} fontSize={20}>
+        <Text mt={1} fontSize={20}>
           {title}
         </Text>
         <Text fontSize={14}>{description}</Text>

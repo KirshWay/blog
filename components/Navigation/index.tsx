@@ -20,7 +20,7 @@ import ThemeToggler from '../ThemeToggler';
 
 type LinkItemProps = {
   href: string;
-  path?: any;
+  path: string;
   target?: string;
 };
 
@@ -83,7 +83,7 @@ const Navigation: React.FC = ({ ...props }) => {
           flexGrow={1}
           mt={{ base: 4, nmd: 0 }}
         >
-          <LinkItem href="/posts" path={path}>
+          <LinkItem href="/posts" path={path as unknown as string}>
             Посты
           </LinkItem>
         </Stack>

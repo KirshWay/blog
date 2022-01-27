@@ -2,8 +2,7 @@
 slug: about-opinions
 title: Мнение
 description: Про важность кого-то  мнение
-cover_img: 'postsAssets/images/opinion_cover.jpg'
-date: '29 Января'
+cover_img: 'postsAssets/images/cover/opinion_cover.jpg'
 tag: mind
 ---
 
