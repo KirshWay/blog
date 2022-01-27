@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   Container,
+  filter,
   Heading,
   Menu,
   MenuButton,
@@ -16,6 +17,7 @@ import GridItem from '../components/ui/GridItem';
 import AnimationShow from '../components/AnimationShow';
 import { CustomizeScroll } from '../assets/scripts/stylesCustomize';
 import { ChevronDownIcon } from '@chakra-ui/icons';
+import { useEffect } from 'react';
 
 type DataPostType = {
   data: [string];
@@ -24,6 +26,7 @@ type DataPostType = {
 const Posts: NextPage<DataPostType> = ({ data }) => {
   const realData = data.map(blog => matter(blog));
   const listItems = realData.map(listItem => listItem.data);
+  const listTags = listItems.map(item => item.tag).filter((el, index, array) => array.indexOf(el) === index);
 
   return (
     <CustomizeScroll>
@@ -33,23 +36,12 @@ const Posts: NextPage<DataPostType> = ({ data }) => {
             <Heading as="h3" mb={5}>
               Posts
             </Heading>
-            <Menu>
-              <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-                Выберите тег
-              </MenuButton>
-              <MenuList>
-                {listItems.map((post, index) => (
-                  <MenuItem key={index}>{post.tag}</MenuItem>
-                ))}
-              </MenuList>
-            </Menu>
           </Box>
           <AnimationShow delay={0.3}>
             <SimpleGrid columns={[1, 2, 2]} gap={6}>
               {listItems.map((post, index) => (
                 <GridItem
                   key={index}
-                  date={post.date}
                   tag={post.tag}
                   title={post.title}
                   description={post.description}
