@@ -62,16 +62,25 @@ export const CustomizeScroll = styled.body`
 
 export const MarkdownStyles = styled.div`
   & > h1 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 
     @media ${device.laptopL} {
       font-size: 3rem;
     }
   }
 
+  & > h2 {
+    font-size: 1.5rem;
+
+    @media ${device.laptopL} {
+      font-size: 2.6rem;
+    }
+  }
+
   & > p {
     font-size: 1rem;
     line-height: 2rem;
+    margin: 1rem 0;
 
     @media ${device.laptopL} {
       font-size: 1.2rem;
