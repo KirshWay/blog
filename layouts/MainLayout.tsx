@@ -1,9 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Box, Container } from '@chakra-ui/react';
 import Navigation from '../components/Navigation';
-import { Loader } from '../components/PlacholderTop';
+
+const placeholderImg = `/mountain.jpg`;
 
 const MainLayout: React.FC = ({ children }) => {
   const route = useRouter();
@@ -23,7 +25,21 @@ const MainLayout: React.FC = ({ children }) => {
       <Navigation />
 
       <Container maxW="container.md" pt={14}>
-        {route.pathname !== '/posts/[blog]' && <Loader />}
+        {route.pathname !== '/posts/[blog]' && (
+          <Box
+            position="relative"
+            m="2% auto"
+            w={['100%', '100%', 640]}
+            h={['100%', '100%', 440]}
+          >
+            <Image
+              width={640}
+              height={440}
+              src={placeholderImg}
+              alt="Placeholder img"
+            />
+          </Box>
+        )}
         {children}
       </Container>
     </Box>

@@ -108,6 +108,18 @@ const Main: NextPage = () => {
                   </Button>
                 </Link>
               </ListItem>
+              {/* REMINDER: - тут будет ссылка на блог в ТГ */}
+              {/* <ListItem>
+                <Link href="https://t.me/KirshWay" target="_blank">
+                  <Button
+                    leftIcon={<Icon as={BsTelegram} />}
+                    variant="ghost"
+                    colorScheme="green"
+                  >
+                    @KIRSHWAY
+                  </Button>
+                </Link>
+              </ListItem> */}
               <ListItem>
                 <Link href="https://twitter.com/KirshWay" target="_blank">
                   <Button

@@ -26,7 +26,9 @@ type DataPostType = {
 const Posts: NextPage<DataPostType> = ({ data }) => {
   const realData = data.map(blog => matter(blog));
   const listItems = realData.map(listItem => listItem.data);
-  const listTags = listItems.map(item => item.tag).filter((el, index, array) => array.indexOf(el) === index);
+  const listTags = listItems
+    .map(item => item.tag)
+    .filter((el, index, array) => array.indexOf(el) === index);
 
   return (
     <CustomizeScroll>
