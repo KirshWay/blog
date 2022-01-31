@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  next:
+    build: .
+    container_name: kirshway-blog
+    restart: unless-stopped
+    expose:
+      - 3000
