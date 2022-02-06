@@ -108,17 +108,6 @@ const Main: NextPage = () => {
                   </Button>
                 </Link>
               </ListItem>
-              <ListItem>
-                <Link href="https://twitter.com/KirshWay" target="_blank">
-                  <Button
-                    leftIcon={<Icon as={BsTwitter} />}
-                    variant="ghost"
-                    colorScheme="green"
-                  >
-                    @KIRSHWAY
-                  </Button>
-                </Link>
-              </ListItem>
             </List>
           </AnimationShow>
         </Container>
